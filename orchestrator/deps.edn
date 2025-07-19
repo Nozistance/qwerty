@@ -1,0 +1,6 @@
+{:deps {qwerty/shared                  {:local/root "../shared"}
+        org.apache.kafka/kafka-clients {:mvn/version "3.4.0"}
+        cheshire/cheshire              {:mvn/version "5.11.0"}
+        integrant/integrant            {:mvn/version "0.8.0"}
+        metosin/malli                  {:mvn/version "0.14.0"}
+        integrant/repl                 {:mvn/version "0.3.2"}}}

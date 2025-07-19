@@ -1,8 +1,11 @@
-{:deps {integrant/integrant            {:mvn/version "0.8.0"}
-        org.apache.kafka/kafka-clients {:mvn/version "3.6.0"}
-        com.xtdb/xtdb-core             {:mvn/version "1.24.0"}
-        com.xtdb/xtdb-kafka            {:mvn/version "1.24.0"}
-        com.xtdb/xtdb-jdbc             {:mvn/version "1.24.0"}
-        org.postgresql/postgresql      {:mvn/version "42.6.0"}
-        metosin/malli                  {:mvn/version "0.14.0"}
-        integrant/repl                 {:mvn/version "0.3.2"}}}
+{:deps    {}
+ :aliases {:repl          {:extra-deps  {qwerty/oder-service {:local/root "order-service"}
+                                         qwerty/orchestrator {:local/root "orchestrator"}
+                                         qwerty/shared       {:local/root "shared"}}
+                           :extra-paths ["order-service/src" "orchestrator/src" "shared/src"]}
+           :order-service {:extra-deps  {qwerty/oder-service {:local/root "order-service"}}
+                           :extra-paths ["order-service/src"]}
+           :orchestrator  {:extra-deps  {qwerty/orchestrator {:local/root "orchestrator"}}
+                           :extra-paths ["orchestrator/src"]}
+           :shared        {:extra-deps  {qwerty/shared {:local/root "shared"}}
+                           :extra-paths ["shared/src"]}}}
